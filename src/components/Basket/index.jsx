@@ -2,11 +2,9 @@ import React, { useEffect, useContext } from 'react'
 import './Basket.scss'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-// import { removeSelectedProduct } from '../../store/actions'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Context } from '../../index'
 import { useDispatch } from 'react-redux'
-// import { removeSelectedProduct, selectedProducts } from '../../store/actions'
 import { increment, decrement, deleteProduct } from '../../store/actions'
 export const Basket = () => {
   const product = useSelector((state) => state.orders)
@@ -36,7 +34,7 @@ export const Basket = () => {
                   <div className='basket_increment'>
                     <div>
                       <div>{order.title}</div>
-                      <span>$ {order.price}</span>
+                      <span>{order.price} $</span>
                     </div>
                     <div className='count'>
                       <button
@@ -63,7 +61,7 @@ export const Basket = () => {
                     </div>
                   </div>
                   <div className='basket_solution'>
-                    <p>{order.count * order.price}$</p>
+                    <p>{Math.floor(order.count * order.price)}$</p>
                   </div>
                   <div
                     onClick={() =>

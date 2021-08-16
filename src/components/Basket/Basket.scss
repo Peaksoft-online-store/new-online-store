@@ -1,9 +1,4 @@
-* {
-  margin: 0 auto;
-}
 .basket {
-  width: 1150px;
-  margin: 0 auto;
   height: 300px;
   h1 {
       font-weight: bolder;
@@ -30,8 +25,7 @@
   }
 }
 .pr {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 20px 0 15px 0;
   .basket_main {
       display: flex;
       justify-content: space-between;
@@ -51,12 +45,16 @@
           display: flex;
           width: 30%;
       }
-      .btn {
-          width: 30px;
-          height: 25px;
-          border: none;
-          border-radius: 5px;
-          margin-left: 40px;
+      .count {
+        display: flex;
+        margin-left: 50px;
+        .btn {
+          justify-content: space-evenly;
+            width: 30px;
+            height: 25px;
+            border: none;
+            border-radius: 5px;
+        }
       }
   }
 }
