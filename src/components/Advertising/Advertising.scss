@@ -1,0 +1,16 @@
+.carousel {
+	padding: 20px 0 10px 0;
+}
+.carImg {
+	height: 300px;
+	border-radius: 30px;
+}
+@media screen and (max-width: 1100px) {
+    .dd {
+        display: flex;
+        justify-content: center;
+    }
+    .carImg {
+        width: 1000px;
+    }
+}
