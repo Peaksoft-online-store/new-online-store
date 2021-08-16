@@ -10,17 +10,15 @@ import { useDispatch } from 'react-redux'
 import { increment, decrement, deleteProduct } from '../../store/actions'
 export const Basket = () => {
   const product = useSelector((state) => state.orders)
-  const state = useSelector((state) => state.products)
   const { auth } = useContext(Context)
   const [user] = useAuthState(auth)
   const dispatch = useDispatch()
   // useEffect(() => {
   //   if (user) {
-  //     console.log("teest", state);
   //     localStorage.setItem('product', JSON.stringify(product))
   //   } else {
   //     localStorage.removeItem('product')
-  //   // }
+  //   }
   // }, [product])
   return (
     <div className='container pr'>
@@ -67,10 +65,10 @@ export const Basket = () => {
                   </div>
                   <div
                     onClick={() =>
-                      dispatch(deleteProduct(order))
+                      dispatch(deleteProduct(index))
                     }
                   >
-                    delete
+                    Удалить
                   </div>
                 </div>
                 <div className='basket_all_product'>

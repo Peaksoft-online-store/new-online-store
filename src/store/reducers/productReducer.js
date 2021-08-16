@@ -11,7 +11,7 @@ const initialState = {
 };
 // const localStorages = JSON.parse(localStorage.getItem("product"));
 export const productReducer = (
-  // localStorages ||
+  // localStorages ? localStorages :
   state = initialState,
   action
 ) => {

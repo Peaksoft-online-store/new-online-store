@@ -24,7 +24,7 @@ const ProductDetails = () => {
     {product.map((el, id) => {
       if (id + 1 == productId) {
         return (<div key={id} className='setProduct_main'>
-          <div className='setProduct_main2'>
+          <div className='setProduct_main2 container'>
             <div className='setProduct_img'>
               <img src={el.image} alt="" />
             </div>
