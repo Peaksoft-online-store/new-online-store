@@ -11,6 +11,7 @@ import { Button } from '@material-ui/core'
 export const Header = () => {
   const { auth } = useContext(Context)
   const [user] = useAuthState(auth)
+  console.log('test')
   return (
     <div className='header'>
       <div className='container'>
