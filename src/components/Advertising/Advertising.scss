@@ -5,12 +5,93 @@
 	height: 300px;
 	border-radius: 30px;
 }
-@media screen and (max-width: 1100px) {
-    .dd {
-        display: flex;
-        justify-content: center;
-    }
-    .carImg {
-        width: 1000px;
-    }
+@media screen and (max-width: 1030px) {
+	.dd {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+	}
+	.carImg {
+		width: 100vw;
+		height: 35vw;
+	}
+}
+@media screen and (max-width: 985px) {
+	.carImg {
+		width: 900px;
+	}
+}
+@media screen and (max-width: 965px) {
+	.carImg {
+		width: 890px;
+	}
+}
+@media screen and (max-width: 945px) {
+	.carImg {
+		width: 870px;
+	}
+}
+@media screen and (max-width: 925px) {
+	.carImg {
+		width: 820px;
+		height: 250px;
+	}
+}
+@media screen and (max-width: 895px) {
+	.carImg {
+		width: 820px;
+		height: 250px;
+	}
+}
+@media screen and (max-width: 870px) {
+	.carImg {
+		width: 780px;
+		height: 250px;
+	}
+}
+@media screen and (max-width: 830px) {
+	.carImg {
+		width: 760px;
+		height: 250px;
+	}
+}
+@media screen and (max-width: 800px) {
+	.carImg {
+		width: 720px;
+		height: 250px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.carImg {
+		width: 700px;
+		height: 250px;
+	}
+}
+@media screen and (max-width: 757px) {
+	.carImg {
+		width: 670px;
+		height: 250px;
+	}
+}
+@media screen and (max-width: 723px) {
+	.carImg {
+		width: 650px;
+	}
+}
+@media screen and (max-width: 540px) {
+	.carImg {
+		width: 100vw;
+		height: 180px;
+	}
+}
+@media screen and (max-width: 395px) {
+	.carImg {
+		width: 100vw;
+		height: 170px;
+	}
+}
+@media screen and (max-width: 360px) {
+	.carousel {
+		display: none;
+	}
 }

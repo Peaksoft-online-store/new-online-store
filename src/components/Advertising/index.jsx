@@ -8,23 +8,22 @@ import pic4 from '../../images/4.jpg'
 import './Advertising.scss'
 
 export const Advertising = () => {
-
-  return (
-    <div className='container carousel'>
-      <Carousel autoplay>
-        <div className="dd">
-          <img className="carImg" src={pic} />
-        </div>
-        <div className="dd">
-          <img className="carImg" src={pic2} />
-        </div>
-        <div className="dd">
-          <img className="carImg" src={pic3} />
-        </div>
-        <div className="dd">
-          <img className="carImg" src={pic4} />
-        </div>
-      </Carousel>
-    </div>
-  )
+	return (
+		<div className='carousel'>
+			<Carousel autoplay>
+				<div className='dd'>
+					<img className='carImg' src={pic} />
+				</div>
+				<div className='dd'>
+					<img className='carImg' src={pic2} />
+				</div>
+				<div className='dd'>
+					<img className='carImg' src={pic3} />
+				</div>
+				<div className='dd'>
+					<img className='carImg' src={pic4} />
+				</div>
+			</Carousel>
+		</div>
+	)
 }
