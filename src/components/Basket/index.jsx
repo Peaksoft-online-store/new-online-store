@@ -14,10 +14,8 @@ export const Basket = () => {
 	const dispatch = useDispatch()
 
 	// useEffect(() => {
-	// 	if (user) {
-	// 		if (orders.length) {
-	// 			localStorage.setItem('orders', JSON.stringify(orders))
-	// 		}
+	// 	if (orders.length) {
+	// 		localStorage.setItem('orders', JSON.stringify(orders))
 	// 	} else {
 	// 		localStorage.removeItem('orders')
 	// 	}

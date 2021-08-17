@@ -22,10 +22,19 @@ export const productReducer = (
 				products: action.payload,
 			}
 		case SELECTED_PRODUCT:
-			return {
+			let arr = [...state.orders]
+			let is_ch = state.orders.findIndex((item) => {
+				return item.title === action.payload
+			})
+			if(is_ch === -1){
+				return {
 				...state,
 				orders: [...state.orders, action.payload],
+				count: action.payload.count +1,
+				price : action.payload.price + action.payload.price
 			}
+			}
+			
 		case INCREMENT:
 			let updatedOrders = state.orders.map((item) => {
 				if (item.id === action.payload.id) {
