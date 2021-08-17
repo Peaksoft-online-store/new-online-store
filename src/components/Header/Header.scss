@@ -16,14 +16,18 @@
 		padding: 8px 0 15px 0;
 	}
 	.userInf {
-		margin-left: 10px;
+		margin-left: 24px;
 		.userDispName {
+			// padding-left: 50px;
 			color: rgb(209, 209, 209);
 			font-size: 15px;
 			font-weight: bold;
 		}
 		.MuiButtonBase-root {
-			margin-left: 12px;
+			margin-left: 35px;
+			display: flex;
+			align-items: flex-end;
+			color: white;
 		}
 	}
 	.icon {
@@ -51,6 +55,13 @@
 			align-items: center;
 			justify-content: center;
 			margin-left: 15px;
+			.MuiIconButton-root{
+				height: 30px;
+			}
+			.MuiSvgIcon-root{
+				height: 70px;
+				width: 35px;
+			}
 		}
 		h1 {
 			padding-top: 5px;

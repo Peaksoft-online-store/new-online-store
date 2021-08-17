@@ -29,7 +29,7 @@ export const Basket = () => {
 									<div className='orderName'>
 										<div>
 											<div>{order.title}</div>
-											<span>{totalPrice} $</span>
+											<span>{order.price} $</span>
 										</div>
 										<div className='count'>
 											<button

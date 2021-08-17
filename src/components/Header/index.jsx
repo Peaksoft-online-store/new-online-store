@@ -42,7 +42,7 @@ export const Header = () => {
           </ul>
           <div className='head'>
             <Link to='/'>
-              <h1>BERMET & BAHA</h1>
+              <h1>BEMA & BAHA</h1>
             </Link>
             <input className='search' placeholder='Я ищу...' />
             <div className='icons'>
@@ -78,8 +78,9 @@ export const Header = () => {
                     <h5 className="userDispName">{user.displayName}</h5>
                     <Button
                       onClick={() => auth.signOut()}
-                      variant="contained" 
+                      variant="contained"
                       color="secondary"
+
                     >
                       Выйти
                     </Button>
