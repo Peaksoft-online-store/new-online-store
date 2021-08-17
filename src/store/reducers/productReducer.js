@@ -28,7 +28,7 @@ export const productReducer = (state = initialState, action) => {
         return {
           orders: state.orders.map((el, id) => {
             return arr[is_ch].title === el.title
-              ? { ...el, count: el.count, price: el.price - el.price }
+              ? { ...el, count: el.count + 1, price: el.price }
               : el;
           }),
           totalCount: state.totalCount + 1,
