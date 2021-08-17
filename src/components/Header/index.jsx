@@ -8,9 +8,26 @@ import { Link } from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Context } from '../../index'
 import { Button } from '@material-ui/core'
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { useSelector } from 'react-redux'
+
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge);
 export const Header = () => {
   const { auth } = useContext(Context)
   const [user] = useAuthState(auth)
+  const totalCount = useSelector((state) => state.totalCount)
+
+  console.log('test')
   return (
     <div className='header'>
       <div className='container'>
@@ -48,7 +65,11 @@ export const Header = () => {
               )}
               <Link to='/basket'>
                 <div className='about'>
-                  <img className='icon' src={basket} />
+                  <IconButton aria-label="cart">
+                    <StyledBadge badgeContent={totalCount} color="secondary">
+                      <ShoppingCartIcon />
+                    </StyledBadge>
+                  </IconButton>
                   <h3>Корзина</h3>
                 </div>
               </Link>

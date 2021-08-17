@@ -5,23 +5,18 @@ import { useSelector } from 'react-redux'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Context } from '../../index'
 import { useDispatch } from 'react-redux'
-import { increment, decrement, deleteProduct } from '../../store/actions'
+import { add_order, delete_order, remove } from '../../store/actions'
+
 
 export const Basket = () => {
 	const orders = useSelector((state) => state.orders)
+	const totalPrice = useSelector((state) => state.totalPrice)
+	const totalCount = useSelector((state) => state.totalCount)
 	const { auth } = useContext(Context)
 	const [user] = useAuthState(auth)
 	const dispatch = useDispatch()
 
-	// useEffect(() => {
-	// 	if (user) {
-	// 		if (orders.length) {
-	// 			localStorage.setItem('orders', JSON.stringify(orders))
-	// 		}
-	// 	} else {
-	// 		localStorage.removeItem('orders')
-	// 	}
-	// }, [orders])
+
 
 	return (
 		<div className='container pr'>
@@ -37,15 +32,15 @@ export const Basket = () => {
 									<div className='orderName'>
 										<div>
 											<div>{order.title}</div>
-											<span>{order.price} $</span>
+											<span>{totalPrice} $</span>
 										</div>
 										<div className='count'>
 											<button
 												className='btn'
 												onClick={() => {
-													if (order.count !== 1) {
+													if (totalCount !== 1) {
 														dispatch(
-															decrement(order.id),
+															delete_order(order),
 														)
 													} else {
 														return null
@@ -54,12 +49,12 @@ export const Basket = () => {
 											>
 												-
 											</button>
-											<p className='num'>{order.count}</p>
+											<p className='num'>{totalCount}</p>
 											<button
 												className='btn'
 												onClick={() =>
 													dispatch(
-														increment(order.id),
+														add_order(order),
 													)
 												}
 											>
@@ -70,23 +65,21 @@ export const Basket = () => {
 									<div className='basket_solution'>
 										<p>
 											{Math.floor(
-												order.count * order.price,
+												totalCount * totalPrice,
 											)}
 											$
 										</p>
 									</div>
 									<div
 										onClick={() =>
-											dispatch(deleteProduct(index))
+											dispatch(remove(index))
 										}
 										className='delete'
 									>
 										Удалить
 									</div>
 								</div>
-								<div className='orderCount'>
-									You have {order.count} product
-								</div>
+
 							</>
 						)
 					})
