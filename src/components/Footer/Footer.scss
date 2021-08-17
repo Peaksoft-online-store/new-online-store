@@ -1,65 +1,69 @@
 .footer {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #481173;
-  padding: 50px 0 30px 0;
-  .foot {
-      display: flex;
-      justify-content: space-between;
-  }
-  h2 {
-      color: #fff;
-      font-size: 18px;
-      letter-spacing: 2px;
-  }
-  .app-store {
-      width: 155px;
-      height: 55px;
-      padding-top: 10px;
-  }
-  li {
-      list-style: none;
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.7);
-      cursor: pointer;
-      a {
-          color: rgba(255, 255, 255, 0.7);
-      }
-  }
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #481173;
+	padding: 50px 0 30px 0;
+	.foot {
+		display: flex;
+		justify-content: space-between;
+		h2 {
+			color: #fff;
+			font-size: 18px;
+			letter-spacing: 2px;
+			font-weight: 600;
+		}
+	}
+	.app-store {
+		width: 155px;
+		height: 55px;
+		padding-top: 10px;
+	}
+	li {
+		list-style: none;
+		font-size: 18px;
+		color: rgba(255, 255, 255, 0.7);
+		cursor: pointer;
+		a {
+			color: rgba(255, 255, 255, 0.7);
+		}
+	}
 }
-@media screen and (max-width: 1024px) {
-  .footer .foot {
-      width: 91vw;
-      flex-wrap: wrap;
-  }
-  .spis {
-      padding-top: 15px;
-  }
+@media screen and (max-width: 1050px) {
+	.footer .foot {
+		width: 85vw;
+		flex-wrap: wrap;
+	}
+	.spis {
+		padding-top: 15px;
+	}
 }
 @media screen and (max-width: 800px) {
-  .footer .foot {
-      width: 70vw;
-  }
+	.footer .foot {
+		width: 70vw;
+	}
 }
 @media screen and (max-width: 620px) {
-  .foot {
-      display: block;
-      flex-wrap: wrap;
-      text-align: center;
-  }
+	.foot {
+		display: block;
+		flex-wrap: wrap;
+		text-align: center;
+	}
 }
 @media screen and (max-width: 550px) {
-  .footer .foot {
-      display: block;
-  }
+	.footer .foot {
+		display: block;
+		.spis {
+			width: 70vw;
+		}
+	}
 }
 @media screen and (max-width: 450px) {
-  .footer .foot {
-      display: block;
-  }
+	.footer .foot {
+		display: block;
+	}
 }
 @media screen and (max-width: 395px) {
-  .footer .foot {
-      display: block;
-  }
+	.footer .foot {
+		display: block;
+	}
 }

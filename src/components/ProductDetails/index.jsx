@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { selectedProducts } from '../../store/actions'
 import Button from '@material-ui/core/Button'
-// import { removeSelectedProduct, selectedProducts } from '../../store/actions'
 import './ProductDetails.scss'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Context } from '../../index'
-// import { Login } from '../Login'
 import { Link } from 'react-router-dom'
 
 const ProductDetails = () => {
@@ -15,29 +13,27 @@ const ProductDetails = () => {
 	const [user] = useAuthState(auth)
 
 	const product = useSelector((state) => state.products)
-	// const orders = useSelector((state) => state.allProducts.orders)
 	const dispatch = useDispatch()
 	const { productId } = useParams()
-	// console.log(orders)
 	return (
 		<div>
 			{product.map((el, id) => {
 				if (id + 1 == productId) {
 					return (
-						<div key={id} className='setProduct_main'>
-							<div className='container setProduct_main2'>
-								<div className='setProduct_img'>
+						<div key={id} className='setProduct'>
+							<div className='container setProduct_main'>
+								<div className='productImg'>
 									<img src={el.image} alt='' />
 								</div>
-								<div className='setProduct_second'>
+								<div className='productSecond'>
 									<h4>{el.title}</h4>
-									<p className='setProduct_price'>
+									<p className='productPrice'>
 										<b> ${el.price}</b>
 									</p>
 									<div className='setProduct_category'>
 										<i>{el.category}</i>
 									</div>
-									<p className='setProduct_description'>
+									<p className='description'>
 										{el.description}
 									</p>
 									{user ? (
@@ -49,7 +45,6 @@ const ProductDetails = () => {
 														selectedProducts(el),
 													)
 												}
-												style={{ cursor: 'pointer' }}
 												key={id}
 											>
 												Add to cart
