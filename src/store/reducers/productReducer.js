@@ -47,7 +47,8 @@ export const productReducer = (state = initialState, action) => {
                 }
               : el;
           }),
-          // localStorage: state.localStorage - action.obj.num,
+          totalCount: parseInt(state.totalCount) - 1,
+          totalPrice: parseInt(state.totalPrice) - parseInt(action.obj.price),
         };
       } else {
         return {
@@ -55,6 +56,8 @@ export const productReducer = (state = initialState, action) => {
           orders: state.orders.filter((_, id) => {
             return id !== action.id;
           }),
+          totalCount: state.totalCount - 1,
+          totalPrice: parseInt(state.totalPrice) - parseInt(action.obj.price),
         };
       }
     case REMOVE:
