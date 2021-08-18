@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-bottom: 15px;
   .cards_list {
       width: 40vh;
-      height: 58vh;
+      height: 50vh;
       border: 1px solid silver;
       border-radius: 10px;
       margin: 10px 0 10px 0;
@@ -21,8 +22,12 @@
           padding-left: 10px;
           p {
               margin-top: 5px;
+              margin-bottom: 5px;
               font-size: 15px;
               color: rgb(12, 11, 11);
+              white-space: nowrap; /* Запрещаем перенос строк */
+              overflow: hidden; /* Обрезаем все, что не помещается в область */
+              text-overflow: ellipsis;
           }
       }
       .card_b {
@@ -31,7 +36,7 @@
       }
       .card_i {
           padding-left: 10px;
-          color: rgb(18, 57, 233);
+          color:#7f0f83;
       }
   }
 }

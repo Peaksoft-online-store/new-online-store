@@ -1,5 +1,5 @@
 .setProduct {
-	height: 830px;
+	height: 630px;
 	.setProduct_main {
 		display: flex;
 		border: 1px solid silver;
@@ -13,7 +13,7 @@
 			width: 40%;
 			img {
 				width: 60%;
-				height: 70%;
+				height: auto;
 			}
 		}
 		.productSecond {
@@ -24,6 +24,10 @@
 				width: 70%;
 				margin-left: 30px;
 				padding-top: 30px;
+				display: -webkit-box;
+				-webkit-line-clamp: 3; // количество строк
+				-webkit-box-orient: vertical;
+				overflow: hidden;
 			}
 			.productPrice {
 				font-size: 30px;
@@ -50,6 +54,10 @@
 				font-size: 17px;
 				margin-left: 30px;
 				padding-top: 10px;
+				display: -webkit-box;
+-webkit-line-clamp: 4; // количество строк
+-webkit-box-orient: vertical;
+overflow: hidden;
 			}
 			Button {
 				margin-left: 40px;

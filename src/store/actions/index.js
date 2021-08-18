@@ -1,25 +1,27 @@
 export const SET_PRODUCTS = "SET_PRODUCTS";
-export const ADD_ORDER = "ADD_ORDER";
-export const DELETE_ORDER = "DELETE_ORDER";
-export const REMOVE = "REMOVE";
+export const SELECTED_PRODUCT = "SELECTED_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
 
 export const setProduct = (products) => ({
   type: SET_PRODUCTS,
   payload: products,
 });
-
-export const add_order = (obj) => ({
-  type: ADD_ORDER,
-  payload: { ...obj, count: 0 },
-});
-
-export const delete_order = (obj, id) => ({
-  type: DELETE_ORDER,
+export const selectedProducts = (product, id) => ({
+  type: SELECTED_PRODUCT,
+  payload: { ...product, count: 1 },
   id,
-  obj,
 });
-
-export const remove = (id) => ({
-  type: REMOVE,
+export const deleteProduct = (id) => ({
+  type: DELETE_PRODUCT,
   payload: id,
+});
+export const increment = (id) => ({
+  type: INCREMENT,
+  payload: { id },
+});
+export const decrement = (id) => ({
+  type: DECREMENT,
+  payload: { id },
 });

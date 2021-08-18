@@ -21,7 +21,7 @@ export const ProductComponent = () => {
                 <b>$ {price}</b>
               </div>
               <div className='card_i'>
-                <i>{category}</i>
+                <b>{category}</b>
               </div>
             </Link>
           </div>

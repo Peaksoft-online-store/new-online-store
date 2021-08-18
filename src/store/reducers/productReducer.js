@@ -1,66 +1,64 @@
-import { SET_PRODUCTS, ADD_ORDER, DELETE_ORDER, REMOVE } from "../actions";
+import {
+  SET_PRODUCTS,
+  DELETE_PRODUCT,
+  SELECTED_PRODUCT,
+  INCREMENT,
+  DECREMENT,
+} from "../actions";
 const initialState = {
   products: [],
   orders: [],
 };
-export const productReducer = (state = initialState, action) => {
+// const localStorages = JSON.parse(localStorage.getItem('product'))
+export const productReducer = (
+  // localStorages ||
+  state = initialState,
+  action
+) => {
   switch (action.type) {
     case SET_PRODUCTS:
       return {
         ...state,
         products: action.payload,
       };
-    case ADD_ORDER:
+    case SELECTED_PRODUCT:
       let arr = [...state.orders];
       let is_choose = state.orders.findIndex((item) => {
-        return item.title === action.obj.title;
+        return item.title === action.payload.title;
       });
       if (is_choose === -1) {
         return {
           ...state,
-          orders: [...state.orders, action.obj],
+          orders: [...state.orders, action.payload],
         };
       } else {
         return {
           orders: state.orders.map((el, id) => {
             return arr[is_choose].title === el.title
-              ? { ...el, count: el.count + 1, price: el.price }
+              ? { ...el, count: el.count + 1 }
               : el;
           }),
         };
       }
-
-    case DELETE_ORDER:
-      let arr1 = [...state.orders];
-      let is_ch1 = state.orders.findIndex((item) => {
-        return item.title === action.obj.title;
+    case INCREMENT:
+      let updatedOrders = state.orders.map((item) => {
+        if (item.id === action.payload.id) {
+          item.count += 1;
+          // item.sum = item.count * item.price;
+        }
+        return item;
       });
-      if (action.obj.count > 1) {
-        return {
-          ...state,
-          orders: state.orders.map((el, id) => {
-            return arr1[is_ch1].title === el.title
-              ? {
-                  ...el,
-                  count: el.count - 1,
-                  price: el.price,
-                }
-              : el;
-          }),
-          totalCount: parseInt(state.totalCount) - 1,
-          totalPrice: parseInt(state.totalPrice) - parseInt(action.obj.price),
-        };
-      } else {
-        return {
-          ...state,
-          orders: state.orders.filter((_, id) => {
-            return id !== action.id;
-          }),
-          totalCount: state.totalCount - 1,
-          totalPrice: parseInt(state.totalPrice) - parseInt(action.obj.price),
-        };
-      }
-    case REMOVE:
+      return { ...state, orders: updatedOrders };
+    case DECREMENT:
+      let updatedOrder = state.orders.map((item) => {
+        if (item.id === action.payload.id) {
+          item.count -= 1;
+          item.sum = item.sum - action.payload.price;
+        }
+        return item;
+      });
+      return { ...state, orders: updatedOrder };
+    case DELETE_PRODUCT:
       return {
         ...state,
         orders: state.orders.filter((order, id) => id !== action.payload),
