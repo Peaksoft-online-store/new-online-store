@@ -24,42 +24,41 @@
 		text-transform: uppercase;
 	}
 }
-.pr {
-	padding: 20px 0 15px 0;
-	.basket_main {
-		color: black;
+.basket_main {
+	width: 65vw;
+	color: black;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0 0 5px rgba(138, 135, 135, 0.5);
+	border-radius: 10px;
+	padding: 15px;
+	margin: 20px 0 20px 0;
+	.orderName {
 		display: flex;
-		justify-content: space-between;
-		box-shadow: 0 0 5px rgba(138, 135, 135, 0.5);
-		border-radius: 10px;
-		padding: 15px;
-		img {
-			width: 60px;
-			height: 70px;
-			margin-left: 20px;
+	}
+	img {
+		width: 60px;
+		height: 70px;
+		margin-left: 20px;
+	}
+	.delete {
+		color: red;
+		font-weight: 600;
+		font-size: 16px;
+	}
+	.count {
+		display: flex;
+		margin: 0 auto;
+		.btn {
+			justify-content: space-evenly;
+			width: 30px;
+			height: 25px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
 		}
-		.basket_solution {
-		}
-		.delete {
-			color: red;
-			font-weight: 600;
-			font-size: 16px;
-		}
-		.orderName {
-		}
-		.count {
-			display: flex;
-			margin: 0 auto;
-			.btn {
-				justify-content: space-evenly;
-				width: 30px;
-				height: 25px;
-				border: none;
-				border-radius: 5px;
-			}
-			.num {
-				padding: 0 5px;
-			}
+		.num {
+			padding: 0 5px;
 		}
 	}
 }
