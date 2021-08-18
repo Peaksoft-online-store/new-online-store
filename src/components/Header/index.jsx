@@ -48,7 +48,7 @@ export const Header = () => {
 						<Link to='/'>
 							<h1>BEMA & BAHA</h1>
 						</Link>
-						<input className='search' placeholder='Я ищу...' />
+						<input className='search' placeholder='Search ...' />
 						<div className='icons'>
 							<Link to='/addresses'>
 								<div className='about'>

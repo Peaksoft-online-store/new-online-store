@@ -16,7 +16,6 @@ export const Basket = () => {
 	const { auth } = useContext(Context)
 	const [user] = useAuthState(auth)
 	const dispatch = useDispatch()
-
 	return (
 		<div className='container'>
 			<Link to='/basket'>
@@ -26,39 +25,39 @@ export const Basket = () => {
 							<>
 								<div className='basket_main' key={index}>
 									<div className='productImg'>
-										<img src={order.image} />
+										<img src={order.image} alt='order.title' />
 									</div>
-									<div className='orderName'>
-										<div>
-											<div>{order.title}</div>
-											<span>{order.price} $</span>
-										</div>
-										<div className='count'>
-											<button
-												className='btn'
-												onClick={() => {
-													if (order.count !== 1) {
-														dispatch(
-															decrement(order.id),
-														)
-													} else {
-														return null
-													}
-												}}
-											>
-												-
-											</button>
-											<p className='num'>{order.count}</p>
-											<button
-												className='btn'
-												onClick={() =>
-													dispatch(increment(order.id))
+									{/* <div className='orderName'> */}
+									<div>
+										<div className='basket-title'>{order.title}</div>
+										<span>{order.price} $</span>
+									</div>
+									<div className='count'>
+										<button
+											className='btn'
+											onClick={() => {
+												if (order.count !== 1) {
+													dispatch(
+														decrement(order.id),
+													)
+												} else {
+													return null
 												}
-											>
-												+
-											</button>
-										</div>
+											}}
+										>
+											-
+										</button>
+										<p className='num'>{order.count}</p>
+										<button
+											className='btn'
+											onClick={() =>
+												dispatch(increment(order.id))
+											}
+										>
+											+
+										</button>
 									</div>
+									{/* </div> */}
 									<div className='basket_solution'>
 										<p>
 											{Math.floor(
