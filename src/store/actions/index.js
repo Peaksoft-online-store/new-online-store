@@ -10,7 +10,7 @@ export const setProduct = (products) => ({
 
 export const add_order = (obj) => ({
   type: ADD_ORDER,
-  obj,
+  payload: { ...obj, count: 0 },
 });
 
 export const delete_order = (obj, id) => ({

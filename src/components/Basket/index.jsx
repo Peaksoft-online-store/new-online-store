@@ -9,12 +9,23 @@ import { add_order, delete_order, remove } from '../../store/actions'
 
 
 export const Basket = () => {
-	const orders = useSelector((state) => state.orders)
-	const totalPrice = useSelector((state) => state.totalPrice)
-	const totalCount = useSelector((state) => state.totalCount)
+	const dispatch = useDispatch()
+
 	const { auth } = useContext(Context)
 	const [user] = useAuthState(auth)
-	const dispatch = useDispatch()
+	const orders = useSelector((state) => state.orders)
+
+
+	const getTotalPrice = (orderItem) => {
+		return orderItem.count
+	}
+
+	const getTotalCount = (orderItem) => {
+		return orderItem.price * orderItem.count
+	}
+
+
+
 
 
 
@@ -38,18 +49,16 @@ export const Basket = () => {
 											<button
 												className='btn'
 												onClick={() => {
-													if (totalCount !== 1) {
-														dispatch(
-															delete_order(order),
-														)
-													} else {
-														return null
-													}
+
+													dispatch(
+														delete_order(order),
+													)
+
 												}}
 											>
 												-
 											</button>
-											<p className='num'>{totalCount}</p>
+											<p className='num'>{getTotalCount(order)}</p>
 											<button
 												className='btn'
 												onClick={() =>
@@ -64,9 +73,7 @@ export const Basket = () => {
 									</div>
 									<div className='basket_solution'>
 										<p>
-											{Math.floor(
-												totalCount * totalPrice,
-											)}
+											{getTotalPrice(order)}
 											$
 										</p>
 									</div>
@@ -79,7 +86,9 @@ export const Basket = () => {
 										Удалить
 									</div>
 								</div>
-
+								{/* text <white-space></white-space> */}
+								{/* heiht:auto */}
+								{/* footer basket */}
 							</>
 						)
 					})
