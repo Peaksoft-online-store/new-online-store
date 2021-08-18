@@ -32,13 +32,13 @@ export const Header = () => {
       <div className='container'>
         <div className='h'>
           <ul>
-            <li>Kg/Русский</li>
+            <li>Kg/Russian</li>
             <li>
               <EnvironmentOutlined />
-              Бишкек
+              Bishkek
             </li>
-            <li>Бесплатная доставка</li>
-            <li>Продавцам</li>
+            <li>Free shipping</li>
+            <li>For sellers</li>
           </ul>
           <div className='head'>
             <Link to='/'>
@@ -49,7 +49,7 @@ export const Header = () => {
               <Link to='/addresses'>
                 <div className='about'>
                   <img className='icon' src={g} />
-                  <h3>Адреса</h3>
+                  <h3>Addresses</h3>
                 </div>
               </Link>
               {user ? (
@@ -58,7 +58,7 @@ export const Header = () => {
                 <Link to='/login'>
                   <div className='about'>
                     <img className='icon' src={userIcon} />
-                    <h3>Аккаунт</h3>
+                    <h3>Account</h3>
                   </div>
                 </Link>
               )}
@@ -69,7 +69,7 @@ export const Header = () => {
                       <ShoppingCartIcon />
                     </StyledBadge>
                   </IconButton>
-                  <h3>Корзина</h3>
+                  <h3>Basket</h3>
                 </div>
               </Link>
               <div className="userInf">
@@ -82,7 +82,7 @@ export const Header = () => {
                       color="secondary"
 
                     >
-                      Выйти
+                      Logout
                     </Button>
                   </Link>
                 ) : (

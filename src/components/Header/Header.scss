@@ -16,15 +16,16 @@
 		padding: 8px 0 15px 0;
 	}
 	.userInf {
-		margin-left: 24px;
+		margin-left: 20px;
+		margin-top: -9px;
 		.userDispName {
-			// padding-left: 50px;
 			color: rgb(209, 209, 209);
 			font-size: 15px;
 			font-weight: bold;
+			letter-spacing: 1px;
 		}
 		.MuiButtonBase-root {
-			margin-left: 35px;
+			margin-left: 15px;
 			display: flex;
 			align-items: flex-end;
 			color: white;

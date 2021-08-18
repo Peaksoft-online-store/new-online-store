@@ -16,7 +16,7 @@ export const Basket = () => {
 	const dispatch = useDispatch()
 
 	return (
-		<div className='container pr'>
+		<div className='container'>
 			<Link to='/basket'>
 				{orders.length ? (
 					orders.map((order, index) => {
@@ -50,9 +50,7 @@ export const Basket = () => {
 											<button
 												className='btn'
 												onClick={() =>
-													dispatch(
-														add_order(order),
-													)
+													dispatch(add_order(order))
 												}
 											>
 												+
@@ -68,27 +66,23 @@ export const Basket = () => {
 										</p>
 									</div>
 									<div
-										onClick={() =>
-											dispatch(remove(index))
-										}
+										onClick={() => dispatch(remove(index))}
 										className='delete'
 									>
 										Удалить
 									</div>
 								</div>
-
 							</>
 						)
 					})
 				) : (
 					<div className='basket'>
-						<h1 className='korz'>В корзине пока ничего нет</h1>
+						<h1 className='korz'>There is nothing in the basket yet</h1>
 						<p>
-							Начните с главной страницы или воспользуйтесь
-							поиском, чтобы найти что-то конкретное
+						Start from the home page to find something specific
 						</p>
 						<Link to='/'>
-							<button className='btn'>Перейти на главную</button>
+							<button className='btn'>Go to Main page</button>
 						</Link>
 					</div>
 				)}

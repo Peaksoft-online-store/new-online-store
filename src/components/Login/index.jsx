@@ -8,7 +8,6 @@ import './Login.scss'
 
 export const Login = () => {
 	const styles = {
-		height: window.innerHeight - 200, // чтобы отцентровать форму,высота по высоте окна самого браузера
 		alignItems: 'center',
 		justifyContent: 'center',
 	}
@@ -41,6 +40,7 @@ export const Login = () => {
 				</Button>
 			) : (
 				<Container>
+					<h3 className="auth">Авторизуйтесь сначала</h3>
 					<Grid container style={styles}>
 						<Grid
 							container
