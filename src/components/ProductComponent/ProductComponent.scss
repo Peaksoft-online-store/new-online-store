@@ -1,84 +1,84 @@
 .main_card {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-  .cards_list {
-      width: 40vh;
-      height: 50vh;
-      border: 1px solid silver;
-      border-radius: 10px;
-      margin: 10px 0 10px 0;
-      .image {
-          text-align: center;
-          padding: 10px 0 10px 0;
-          border-bottom: 1px solid silver;
-          img {
-              width: 20vh;
-              height: 30vh;
-          }
-      }
-      .card_p {
-          padding-left: 10px;
-          p {
-              margin-top: 5px;
-              margin-bottom: 5px;
-              font-size: 15px;
-              color: rgb(12, 11, 11);
-              white-space: nowrap; /* Запрещаем перенос строк */
-              overflow: hidden; /* Обрезаем все, что не помещается в область */
-              text-overflow: ellipsis;
-          }
-      }
-      .card_b {
-          padding-left: 10px;
-          color: rgb(84, 0, 145);
-      }
-      .card_i {
-          padding-left: 10px;
-          color:#7f0f83;
-      }
-  }
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	margin-bottom: 15px;
+	.cards_list {
+		width: 40vh;
+		height: 50vh;
+		border: 1px solid silver;
+		border-radius: 10px;
+		margin: 10px 0 10px 0;
+		.image {
+			text-align: center;
+			padding: 10px 0 10px 0;
+			border-bottom: 1px solid silver;
+			img {
+				width: 20vh;
+				height: 30vh;
+			}
+		}
+		.card_p {
+			padding-left: 10px;
+			p {
+				margin-top: 5px;
+				margin-bottom: 5px;
+				font-size: 15px;
+				color: rgb(12, 11, 11);
+				white-space: nowrap; /* Запрещаем перенос строк */
+				overflow: hidden; /* Обрезаем все, что не помещается в область */
+				text-overflow: ellipsis;
+			}
+		}
+		.card_b {
+			padding-left: 10px;
+			color: rgb(84, 0, 145);
+		}
+		.card_i {
+			padding-left: 10px;
+			color: #7f0f83;
+		}
+	}
 }
 @media screen and (max-width: 1024px) {
-  .main_card {
-      width: 100vw;
-  }
-  .main_card .cards_list {
-      width: 40vw;
-      height: 55vw;
-  }
+	.main_card {
+		width: 100vw;
+	}
+	.main_card .cards_list {
+		width: 40vw;
+		height: 55vw;
+	}
 }
 @media screen and (max-width: 800px) {
-  .main_card {
-      width: 90vw;
-  }
-  .main_card .cards_list {
-      width: 35vw;
-      height: 65vw;
-  }
+	.main_card {
+		width: 90vw;
+	}
+	.main_card .cards_list {
+		width: 35vw;
+		height: 65vw;
+	}
 }
 @media screen and (max-width: 550px) {
-  .main_card {
-      width: 100vw;
-  }
-  .main_card .cards_list {
-      width: 35vw;
-      height: 78vw;
-  }
+	.main_card {
+		width: 100vw;
+	}
+	.main_card .cards_list {
+		width: 35vw;
+		height: 78vw;
+	}
 }
 @media screen and (max-width: 450px) {
-  .main_card .cards_list {
-      width: 65vw;
-      height: 100vw;
-  }
+	.main_card .cards_list {
+		width: 65vw;
+		height: 100vw;
+	}
 }
 @media screen and (max-width: 395px) {
-  .main_card {
-      width: 100vw;
-      .cards_list {
-          width: 70vw;
-          height: 60vh;
-      }
-  }
+	.main_card {
+		width: 100vw;
+		.cards_list {
+			width: 70vw;
+			height: 45vh;
+		}
+	}
 }

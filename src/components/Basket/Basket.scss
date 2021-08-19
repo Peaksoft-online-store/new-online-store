@@ -27,27 +27,19 @@
 .basket_main {
 	width: 65vw;
 	color: black;
-	
 	display: grid;
 	grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
 	box-shadow: 0 0 5px rgba(138, 135, 135, 0.5);
 	border-radius: 10px;
 	padding: 15px;
-	margin: 20px 0 20px 0;
-	margin-left: 90px;
+	margin: 20px 0 20px 105px;
 	align-items: center;
-	.orderName {
-		display: flex;
-		.basket-title{
-			white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
+	.productImg {
+		margin-left: 20px;
+		img {
+			width: 60px;
+			height: 70px;
 		}
-	}
-	img {
-		width: 60px;
-		height: 70px;
-		// margin-left: 20px;s
 	}
 	.delete {
 		color: red;
@@ -107,7 +99,7 @@ text-overflow: ellipsis;
 	.basket {
 		.korz {
 			width: 200px;
-			padding-top: 0;
+			padding-top: 25px;
 		}
 	}
 }
@@ -127,5 +119,40 @@ text-overflow: ellipsis;
 		p {
 			margin-left: -10px;
 		}
+	}
+}
+
+// баскет с вещами
+@media screen and (max-width: 380px) {
+	.basket_main {
+		width: 93vw;
+		margin-left: 0;
+		.count {
+			margin-left: -10px;	
+		}
+		.num {
+			padding: 0 5px;
+		}
+		img {
+			width: 45px;	
+			margin-left: 0;
+		}
+		.btn {
+			width: 20px !important;
+		}
+	}
+	.delete {
+		margin-top: -20px;
+		margin-left: 3px;
+	}
+	.orderPrice {
+		margin-left: 10px;
+	}
+	.basket-title {
+		display: -webkit-box;
+		-webkit-line-clamp: 1; // количество строк
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		margin-left: 10px;
 	}
 }
