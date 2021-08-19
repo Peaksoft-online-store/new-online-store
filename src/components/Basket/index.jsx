@@ -5,11 +5,7 @@ import { useSelector } from 'react-redux'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { Context } from '../../index'
 import { useDispatch } from 'react-redux'
-import {
-	decrement,
-	deleteProduct,
-	increment,
-} from '../../store/actions'
+import { decrement, deleteProduct, increment } from '../../store/actions'
 
 export const Basket = () => {
 	const orders = useSelector((state) => state.orders)
@@ -25,12 +21,16 @@ export const Basket = () => {
 							<>
 								<div className='basket_main' key={index}>
 									<div className='productImg'>
-										<img src={order.image} alt='order.title' />
+										<img
+											src={order.image}
+											alt='order.title'
+										/>
 									</div>
-									{/* <div className='orderName'> */}
 									<div>
-										<div className='basket-title'>{order.title}</div>
-										<span>{order.price} $</span>
+										<div className='basket-title'>
+											{order.title}
+										</div>
+										<span className="orderPrice">{order.price} $</span>
 									</div>
 									<div className='count'>
 										<button
@@ -57,7 +57,6 @@ export const Basket = () => {
 											+
 										</button>
 									</div>
-									{/* </div> */}
 									<div className='basket_solution'>
 										<p>
 											{Math.floor(
